@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>dtpr_icons / purpose / ic_black / accessibility</title>
+    <desc>Created with Sketch.</desc>
+    <g id="dtpr_icons-/-purpose-/-ic_black-/-accessibility" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Container" x="0" y="0" width="24" height="24"></rect>
+        <g id="Group-7" transform="translate(4.000000, 2.000000)" fill="#000000">
+            <path d="M13,0 C14.104,0 15,0.896 15,2 C15,3.104 14.104,4 13,4 C11.896,4 11,3.104 11,2 C11,0.896 11.896,0 13,0" id="Fill-1"></path>
+            <path d="M8.0195,13.46 L12.9995,13.46 L12.9995,17.46 C12.9995,18.012 13.4475,18.46 13.9995,18.46 C14.5525,18.46 14.9995,18.012 14.9995,17.46 L14.9995,12.96 C14.9995,11.86 14.0995,10.96 12.9995,10.96 L11.1395,10.96 L12.8095,7.29 C13.4195,5.96 12.4405,4.46 10.9595,4.46 L5.7595,4.46 C4.9505,4.46 4.2195,4.93 3.8895,5.66 L3.6005,6.438 C3.3955,6.987 3.7065,7.594 4.2715,7.751 L4.2955,7.757 C4.7795,7.89 5.2865,7.646 5.4825,7.184 L5.7905,6.46 L7.9995,6.46 L6.1695,10.56 L8.0195,13.46 Z" id="Fill-3"></path>
+            <path d="M5,9.46 C2.238,9.46 0,11.698 0,14.46 C0,17.222 2.238,19.46 5,19.46 C7.762,19.46 10,17.222 10,14.46 C10,11.698 7.762,9.46 5,9.46 M5,11.46 C6.654,11.46 8,12.806 8,14.46 C8,16.114 6.654,17.46 5,17.46 C3.346,17.46 2,16.114 2,14.46 C2,12.806 3.346,11.46 5,11.46" id="Fill-5"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>dtpr_icons / tech / ic_black / sound</title>
+    <desc>Created with Sketch.</desc>
+    <g id="dtpr_icons-/-tech-/-ic_black-/-sound" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+            <rect id="Rectangle" fill="#000000" x="1.2" y="8.4" width="2.4" height="7.2" rx="1.2"></rect>
+            <rect id="Rectangle" fill="#000000" x="6" y="4.8" width="2.4" height="14.4" rx="1.2"></rect>
+            <rect id="Rectangle" fill="#000000" x="10.8" y="2.4" width="2.4" height="19.2" rx="1.2"></rect>
+            <rect id="Rectangle" fill="#000000" x="15.6" y="4.8" width="2.4" height="14.4" rx="1.2"></rect>
+            <rect id="Rectangle" fill="#000000" x="20.4" y="8.4" width="2.4" height="7.2" rx="1.2"></rect>
+        </g>
+    </g>
+</svg>

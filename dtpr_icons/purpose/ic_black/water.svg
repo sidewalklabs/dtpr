@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>dtpr_icons / purpose / ic_black / water</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.0004 0 13.5074 0 13.5074 17.9999 0.0004 17.9999"></polygon>
+    </defs>
+    <g id="dtpr_icons-/-purpose-/-ic_black-/-water" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Container" x="0" y="0" width="24" height="24"></rect>
+        <g id="Group-3" transform="translate(5.000000, 3.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Clip-2"></g>
+            <path d="M6.5024,0.0869 C6.2364,0.3269 0.0004,6.0269 0.0004,11.2459 C0.0004,14.9699 3.0294,17.9999 6.7534,17.9999 C10.4784,17.9999 13.5074,14.9699 13.5074,11.2459 C13.5074,6.0269 7.2714,0.3269 7.0054,0.0869 C6.8574,-0.0291 6.6494,-0.0291 6.5024,0.0869" id="Fill-1" fill="#000000" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

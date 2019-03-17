@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>dtpr_icons / purpose / white / health</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 17.9999 0 17.9999 18 0 18"></polygon>
+    </defs>
+    <g id="dtpr_icons-/-purpose-/-white-/-health" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dtpr_icons-/-container-/-hexagon" stroke="#000000">
+            <g id="Group-6" transform="translate(4.000000, 2.000000)">
+                <path d="M29,23.3623473 C29,24.1747401 28.5668669,24.9262388 27.8637022,25.3327062 L15.1374487,32.6944323 C14.4338084,33.1018559 13.5661916,33.1018559 12.8629306,32.6946518 L0.135278613,25.332498 C-0.56726465,24.9257096 -1,24.1743377 -1,23.3623473 L-1,8.63781792 C-1,7.82533466 -0.567409549,7.07453951 0.13562416,6.66746721 L12.8636403,-0.695557449 C13.5667275,-1.10148085 14.4332725,-1.10148085 15.1371226,-0.695116592 L27.863434,6.66730391 C28.5670118,7.07401009 29,7.82493224 29,8.63781792 L29,23.3623473 Z" id="Stroke-26" stroke-width="2"></path>
+            </g>
+        </g>
+        <g id="dtpr_icons-/-purpose-/-ic_black-/-health" transform="translate(6.000000, 6.000000)">
+            <rect id="Container" x="0" y="0" width="24" height="24"></rect>
+            <g id="Group-3" stroke-width="1" fill-rule="evenodd" transform="translate(3.000000, 3.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M16.7139,6 L11.9999,6 L11.9999,1.286 C11.9999,0.576 11.4249,0 10.7139,0 L7.2859,0 C6.5749,0 5.9999,0.576 5.9999,1.286 L5.9999,6 L1.2859,6 C0.5749,6 -0.0001,6.576 -0.0001,7.286 L-0.0001,10.714 C-0.0001,11.424 0.5749,12 1.2859,12 L5.9999,12 L5.9999,16.714 C5.9999,17.424 6.5749,18 7.2859,18 L10.7139,18 C11.4249,18 11.9999,17.424 11.9999,16.714 L11.9999,12 L16.7139,12 C17.4249,12 17.9999,11.424 17.9999,10.714 L17.9999,7.286 C17.9999,6.576 17.4249,6 16.7139,6" id="Fill-1" fill="#000000" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

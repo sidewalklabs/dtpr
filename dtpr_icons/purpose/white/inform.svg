@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>dtpr_icons / purpose / white / inform</title>
+    <desc>Created with Sketch.</desc>
+    <g id="dtpr_icons-/-purpose-/-white-/-inform" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dtpr_icons-/-container-/-hexagon" stroke="#000000">
+            <g id="Group-6" transform="translate(4.000000, 2.000000)">
+                <path d="M29,23.3623473 C29,24.1747401 28.5668669,24.9262388 27.8637022,25.3327062 L15.1374487,32.6944323 C14.4338084,33.1018559 13.5661916,33.1018559 12.8629306,32.6946518 L0.135278613,25.332498 C-0.56726465,24.9257096 -1,24.1743377 -1,23.3623473 L-1,8.63781792 C-1,7.82533466 -0.567409549,7.07453951 0.13562416,6.66746721 L12.8636403,-0.695557449 C13.5667275,-1.10148085 14.4332725,-1.10148085 15.1371226,-0.695116592 L27.863434,6.66730391 C28.5670118,7.07401009 29,7.82493224 29,8.63781792 L29,23.3623473 Z" id="Stroke-26" stroke-width="2"></path>
+            </g>
+        </g>
+        <g id="dtpr_icons-/-purpose-/-ic_black-/-inform" transform="translate(6.000000, 6.000000)">
+            <rect id="Container" x="0" y="0" width="24" height="24"></rect>
+            <path d="M12.5,7 C11.119,7 10,5.881 10,4.5 C10,3.119 11.119,2 12.5,2 C13.881,2 15,3.119 15,4.5 C15,5.881 13.881,7 12.5,7 Z M16,20 C16.552,20 17,20.448 17,21 C17,21.552 16.552,22 16,22 L9,22 C8.448,22 8,21.552 8,21 C8,20.448 8.448,20 9,20 L10,20 L10,10 L9,10 C8.448,10 8,9.552 8,9 C8,8.448 8.448,8 9,8 L11,8 L11.5,8 L14,8 C14.552,8 15,8.448 15,9 L15,20 L16,20 Z" id="Combined-Shape" fill="#000000" fill-rule="evenodd"></path>
+        </g>
+    </g>
+</svg>

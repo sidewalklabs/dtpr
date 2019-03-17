@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>dtpr_icons / data / pixels</title>
+    <desc>Created with Sketch.</desc>
+    <g id="dtpr_icons-/-data-/-pixels" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-16" transform="translate(10.000000, 10.000000)" fill="#000000">
+            <path d="M2.1658,10.562 L3.8328,10.562 L3.8328,8.895 L2.1658,8.895 L2.1658,7.229 L3.8328,7.229 L3.8328,5.562 L2.1658,5.562 L2.1658,3.895 L3.8328,3.895 L3.8328,2.228 L13.8338,2.228 L13.8338,12.229 L12.1668,12.229 L12.1668,13.896 L10.5008,13.896 L10.5008,12.229 L8.8328,12.229 L8.8328,13.896 L7.1668,13.896 L7.1668,12.229 L5.4998,12.229 L5.4998,13.896 L3.8328,13.896 L3.8328,12.229 L2.1658,12.229 L2.1658,10.562 Z M0.4988,1.395 L0.4988,14.729 C0.4988,15.19 0.8728,15.563 1.3328,15.563 L14.6678,15.563 C15.1278,15.563 15.5008,15.19 15.5008,14.729 L15.5008,1.395 C15.5008,0.934 15.1278,0.561 14.6678,0.561 L1.3328,0.561 C0.8728,0.561 0.4988,0.934 0.4988,1.395 L0.4988,1.395 Z" id="Fill-4"></path>
+            <polygon id="Fill-6" points="3.833 5.5618 5.5 5.5618 5.5 3.8948 3.833 3.8948"></polygon>
+            <polygon id="Fill-8" points="5.5 7.2288 7.167 7.2288 7.167 5.5618 5.5 5.5618"></polygon>
+            <polygon id="Fill-9" points="7.166 8.8958 8.833 8.8958 8.833 7.2288 7.166 7.2288"></polygon>
+            <polygon id="Fill-10" points="8.834 10.5628 10.501 10.5628 10.501 8.8958 8.834 8.8958"></polygon>
+            <polygon id="Fill-11" points="10.501 12.2288 12.167 12.2288 12.167 10.5618 10.501 10.5618"></polygon>
+            <polygon id="Fill-12" points="7.167 12.2288 8.834 12.2288 8.834 10.5618 7.167 10.5618"></polygon>
+            <polygon id="Fill-13" points="5.5 10.5628 7.167 10.5628 7.167 8.8958 5.5 8.8958"></polygon>
+            <polygon id="Fill-14" points="3.833 8.8958 5.5 8.8958 5.5 7.2288 3.833 7.2288"></polygon>
+            <polygon id="Fill-15" points="3.833 12.2288 5.5 12.2288 5.5 10.5618 3.833 10.5618"></polygon>
+        </g>
+        <g id="dtpr_icons-/-container-/-circle" stroke="#000000" stroke-width="2">
+            <rect id="Rectangle" x="2" y="2" width="32" height="32" rx="15"></rect>
+        </g>
+    </g>
+</svg>

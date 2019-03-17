@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>dtpr_icons / storage / cloud</title>
+    <desc>Created with Sketch.</desc>
+    <g id="dtpr_icons-/-storage-/-cloud" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-8" transform="translate(15.000000, 5.000000)" fill="#000000">
+            <path d="M2.67986078,13.7666473 C2.86227773,13.9490642 3.14410168,13.9490642 3.32651863,13.7666473 L5.86805819,11.2251077 C6.15090695,10.9340604 5.95004334,10.4421496 5.5401176,10.4421496 L3.9106628,10.4421496 L3.9106628,1.15015793 C3.9106628,0.646974092 3.5027867,0.239097985 2.99960286,0.239097985 C2.49744383,0.239097985 2.08956772,0.646974092 2.08956772,1.15015793 L2.08956772,10.4421496 L0.457038479,10.4421496 C0.0471127431,10.4421496 -0.153750867,10.9340604 0.138321219,11.2158844 L2.67986078,13.7666473 Z" id="Fill-4"></path>
+        </g>
+        <path d="M11.0542084,20.8762601 C11.4882663,24.357126 14.4599479,27 18,27 C21.5400521,27 24.5117337,24.357126 24.9457916,20.8762601 L25.0550596,20 L33,20 L33,30 C33,31.6568542 31.6568542,33 30,33 L6,33 C4.34314575,33 3,31.6568542 3,30 L3,20 L10.9449404,20 L11.0542084,20.8762601 Z" id="Combined-Shape" stroke="#000000" stroke-width="2"></path>
+        <g id="dtpr_icons-/-container-/-square" stroke="#000000" stroke-width="2">
+            <rect id="Rectangle" x="3" y="3" width="30" height="30" rx="2"></rect>
+        </g>
+    </g>
+</svg>

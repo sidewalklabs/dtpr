@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>dtpr_icons / purpose / white / enforcement</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.711 0 7.75125 0 7.75125 7.0399 0.711 7.0399"></polygon>
+        <polygon id="path-3" points="0 0.001 10.9946 0.001 10.9946 2 0 2"></polygon>
+    </defs>
+    <g id="dtpr_icons-/-purpose-/-white-/-enforcement" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dtpr_icons-/-container-/-hexagon" stroke="#000000">
+            <g id="Group-6" transform="translate(4.000000, 2.000000)">
+                <path d="M29,23.3623473 C29,24.1747401 28.5668669,24.9262388 27.8637022,25.3327062 L15.1374487,32.6944323 C14.4338084,33.1018559 13.5661916,33.1018559 12.8629306,32.6946518 L0.135278613,25.332498 C-0.56726465,24.9257096 -1,24.1743377 -1,23.3623473 L-1,8.63781792 C-1,7.82533466 -0.567409549,7.07453951 0.13562416,6.66746721 L12.8636403,-0.695557449 C13.5667275,-1.10148085 14.4332725,-1.10148085 15.1371226,-0.695116592 L27.863434,6.66730391 C28.5670118,7.07401009 29,7.82493224 29,8.63781792 L29,23.3623473 Z" id="Stroke-26" stroke-width="2"></path>
+            </g>
+        </g>
+        <g id="dtpr_icons-/-purpose-/-ic_black-/-enforcement" transform="translate(6.000000, 6.000000)">
+            <rect id="Container" x="0" y="0" width="24" height="24"></rect>
+            <g id="Group-11" stroke-width="1" fill-rule="evenodd" transform="translate(2.000000, 2.000000)">
+                <path d="M19.6611,16.9668 L5.8251,3.1308 L3.1661,5.7888 L17.0021,19.6248 C17.3931,20.0158 18.0261,20.0158 18.4161,19.6248 L19.6611,18.3798 C20.0511,17.9888 20.0511,17.3568 19.6611,16.9668" id="Fill-1" fill="#000000"></path>
+                <g id="Group-5" transform="translate(6.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-4"></g>
+                    <path d="M7.458,5.0879 C7.849,4.6979 7.849,4.0659 7.458,3.6749 L4.076,0.2929 C3.686,-0.0981 3.053,-0.0981 2.663,0.2929 L0.711,2.2439 L5.506,7.0399 L7.458,5.0879 Z" id="Fill-3" fill="#000000" mask="url(#mask-2)"></path>
+                </g>
+                <path d="M3.7109,13.4219 C4.1009,13.8129 4.7339,13.8129 5.1249,13.4219 L7.0759,11.4709 L2.2799,6.6749 L0.3289,8.6269 C-0.0611,9.0169 -0.0611,9.6499 0.3289,10.0399 L3.7109,13.4219 Z" id="Fill-6" fill="#000000"></path>
+                <g id="Group-10" transform="translate(0.000000, 18.000000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-9"></g>
+                    <path d="M9.9946,0.001 L0.9996,0.001 C0.4476,0.001 -0.0004,0.448 -0.0004,1.001 C-0.0004,1.553 0.4476,2 0.9996,2 L9.9946,2 C10.5466,2 10.9946,1.553 10.9946,1.001 C10.9946,0.448 10.5466,0.001 9.9946,0.001" id="Fill-8" fill="#000000" mask="url(#mask-4)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

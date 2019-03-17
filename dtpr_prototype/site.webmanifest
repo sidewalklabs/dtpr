@@ -1,0 +1,12 @@
+{
+  "short_name": "DTPR",
+  "name": "Digital Transparency",
+  "icons": [{
+    "src":  "icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "start_url": "/",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}

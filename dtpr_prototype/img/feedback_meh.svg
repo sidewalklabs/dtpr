@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>feedback_meh</title>
+    <desc>Created with Sketch.</desc>
+    <g id="feedback_meh" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_mood_bad">
+            <g id="Icon-24px">
+                <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                <path d="M2,12 C2,6.48 6.47,2 11.99,2 C17.52,2 22,6.48 22,12 C22,17.52 17.52,22 11.99,22 C6.47,22 2,17.52 2,12 Z M4,12 C4,16.42 7.58,20 12,20 C16.42,20 20,16.42 20,12 C20,7.58 16.42,4 12,4 C7.58,4 4,7.58 4,12 Z M17,9.5 C17,10.33 16.33,11 15.5,11 C14.67,11 14,10.33 14,9.5 C14,8.67 14.67,8 15.5,8 C16.33,8 17,8.67 17,9.5 Z M10,9.5 C10,10.33 9.33,11 8.5,11 C7.67,11 7,10.33 7,9.5 C7,8.67 7.67,8 8.5,8 C9.33,8 10,8.67 10,9.5 Z M8.5,16.5 C7.94771525,16.5 7.5,16.0522847 7.5,15.5 C7.5,14.9477153 7.94771525,14.5 8.5,14.5 L15.5,14.5 C16.0522847,14.5 16.5,14.9477153 16.5,15.5 C16.5,16.0522847 16.0522847,16.5 15.5,16.5 L8.5,16.5 Z" id="Shape" fill="#BA9E54"></path>
+            </g>
+        </g>
+    </g>
+</svg>
