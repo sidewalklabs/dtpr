@@ -164,11 +164,3 @@ Below you'll find working defintions for the DTPR taxonomy along with accompanyi
 | ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Stored primarily internationally | Data is stored outside the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
 | ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Backed up locally | Data is backed up with the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
 | ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Backed up internationally | Data is backed up outside the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
-
-
-
-
-
-
-
-
