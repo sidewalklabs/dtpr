@@ -70,9 +70,7 @@ Below you'll find working defintions for the DTPR taxonomy along with accompanyi
 | ![](https://dtpr.sidewalklabs.com/dtpr_icons/purpose/research.svg)               | Research & Development     | Supports exploratory research and testing. Find out more [here](https://en.wikipedia.org/wiki/Research_and_development)                                                                                                                                                                                                                                                                                                                                                                                      |
 | ![](https://dtpr.sidewalklabs.com/dtpr_icons/purpose/entry.svg)                  | Entry                      | Supports authentication or validation in order to access a space or a service. Find out more [here](https://en.wikipedia.org/wiki/Access_control) |
 | ![](https://dtpr.sidewalklabs.com/dtpr_icons/purpose/arts.svg)                   | Arts & Culture             | Enables artistic and/or cultural expression. Find out more [here](https://en.wikipedia.org/wiki/Interactive_art) |
-
 | ![](https://dtpr.sidewalklabs.com/dtpr_icons/purpose/connectivity.svg)                   | Connectivity             | Enables connectivity of devices to a digital network. Find out more [here](https://en.wikipedia.org/wiki/Interactive_art)|
-
 | ![](https://dtpr.sidewalklabs.com/dtpr_icons/purpose/logistics.svg)                   | Logistics             | Supports the movements of goods or materials. Find out more [here](https://en.wikipedia.org/wiki/Interactive_art) |
 
 ----
