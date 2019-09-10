@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>dtpr_icons / tech / ic_black / weight</title>
+    <desc>Created with Sketch.</desc>
+    <g id="dtpr_icons-/-tech-/-ic_black-/-weight" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+        <path d="M14.5584816,8 L9.44151844,8 C8.58065762,8 7.81637994,8.55086019 7.54415184,9.36754447 L4.87748518,17.3675445 C4.52818963,18.4154311 5.09450961,19.5480711 6.14239624,19.8973666 C6.34632918,19.9653442 6.55988758,20 6.77485177,20 L17.2251482,20 C18.3297177,20 19.2251482,19.1045695 19.2251482,18 C19.2251482,17.7850358 19.1904925,17.5714774 19.1225148,17.3675445 L16.4558482,9.36754447 C16.1836201,8.55086019 15.4193424,8 14.5584816,8 Z" id="Path-2" stroke="#000000" stroke-width="2"></path>
+        <circle id="Oval" stroke="#000000" stroke-width="2" cx="12" cy="5" r="2"></circle>
+    </g>
+</svg>

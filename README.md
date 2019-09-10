@@ -135,15 +135,15 @@ Below you'll find working defintions for the DTPR taxonomy along with accompanyi
 
 | Icon                    | Technology                                                          | Description                                                                                                                                                                                                    |
 | ----------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Available to download | ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/download.svg) | Data that can be accessed and downloaded online, either for free or for a fee |
-| Available to 3rd parties | ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/3rdparty.svg) | Data is available to 3rd parties not involved in the data activity. This does not always mean that data is being resold. |
-| Available to me | ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/yes.svg) | Available to me but not to other individuals. For example, as an individual you have access to all your electronic toll records for your car, but other individuals do not have access to that. |
-| Not available to me | ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/no.svg) | Not available to me or other individuals. As an individual, there isn't a way for you to access this data. |
-| Available for resale | ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/resale.svg) | The data collected may be resold to other 3rd parties |
-| Not available to the accountable organization | ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/no.svg) | Data is not available to the accountable organization *this can be customized* |
-| Not available to vendor | ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/no.svg) | Data is not available to the data collection or technology provider *this can be customized* |
-| Available to the accountable organization | ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/yes.svg) | Data is available to the accountable organization  *this can be customized* |
-| Available to vendor | ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/yes.svg) | Data is available to the data collection or technology provider *this can be customized* |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/download.svg) | Available to download | Data that can be accessed and downloaded online, either for free or for a fee |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/3rdparty.svg) | Available to 3rd parties | Data is available to 3rd parties not involved in the data activity. This does not always mean that data is being resold. |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/yes.svg) | Available to me | Available to me but not to other individuals. For example, as an individual you have access to all your electronic toll records for your car, but other individuals do not have access to that. |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/no.svg) | Not available to me | Not available to me or other individuals. As an individual, there isn't a way for you to access this data. |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/resale.svg) | Available for resale | The data collected may be resold to other 3rd parties |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/no.svg) | Not available to the accountable organization | Data is not available to the accountable organization *this can be customized* |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/no.svg) | Not available to vendor | Data is not available to the data collection or technology provider *this can be customized* |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/yes.svg) | Available to the accountable organization | Data is available to the accountable organization  *this can be customized* |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/access/yes.svg) | Available to vendor | Data is available to the data collection or technology provider *this can be customized* |
 
 
 ### Data Storage
@@ -151,19 +151,19 @@ Below you'll find working defintions for the DTPR taxonomy along with accompanyi
 | Icon                    | Technology                                                          | Description                                                                                                                                                                                                    |
 | ----------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Stored on 3rd Party Cloud | storage/cloud | Data is stored on behalf of the organization or the data collector in an off-site data centre, such as Amazon Web Services, Google Cloud and Microsoft Azure |
-| No data retained | ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/no.svg) | No data is kept or stored  |
-| Retained 24 hours | ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Data is stored for 24 hours, and after this time period is deleted |
-| Retained 1 month | ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Data is stored for 1 month, and after this time period is deleted |
-| Retained 3 months | ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Data is stored for 3 months, and after this time period is deleted |
-| Retained for *time period* | ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Data is stored for *a customized time period*, and after this time period is deleted |
-| Retained 1 year  | ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Data is stored for 1 year, and after this time period is deleted  |
-| Retained 5 years | ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Data is stored for 5 years, and after this time period is deleted  |
-| Retained indefinitely | ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Data is retained indefinitely |
-| Stored locally | ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Data is stored in the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
-| Stored primarily locally | ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Data is stored mainly in the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
-| Stored primarily internationally | ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Data is stored outside the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
-| Backed up locally | ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Data is backed up with the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
-| Backed up internationally | ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Data is backed up outside the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/no.svg) | No data retained | No data is kept or stored  |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Retained 24 hours | Data is stored for 24 hours, and after this time period is deleted |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Retained 1 month | Data is stored for 1 month, and after this time period is deleted |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Retained 3 months | Data is stored for 3 months, and after this time period is deleted |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Retained for *time period* | Data is stored for *a customized time period*, and after this time period is deleted |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Retained 1 year  | Data is stored for 1 year, and after this time period is deleted  |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Retained 5 years | Data is stored for 5 years, and after this time period is deleted  |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/retention/yes.svg) | Retained indefinitely | Data is retained indefinitely |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Stored locally | Data is stored in the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Stored primarily locally | Data is stored mainly in the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Stored primarily internationally | Data is stored outside the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Backed up locally | Data is backed up with the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
+| ![](https://dtpr.sidewalklabs.com/dtpr_icons/storage/cloud.svg) | Backed up internationally | Data is backed up outside the jurisdiction where it was collected. Find out more [here] (https://en.wikipedia.org/wiki/Data_sovereignty) |
 
 
 

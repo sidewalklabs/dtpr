@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>dtpr_icons / purpose / connectivity</title>
+    <desc>Created with Sketch.</desc>
+    <g id="dtpr_icons-/-purpose-/-connectivity" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dtpr_icons-/-container-/-black-/-hexagon" fill="#000000" stroke="#000000">
+            <g id="Group-6" transform="translate(4.000000, 2.000000)">
+                <path d="M29,23.3623473 C29,24.1747401 28.5668669,24.9262388 27.8637022,25.3327062 L15.1374487,32.6944323 C14.4338084,33.1018559 13.5661916,33.1018559 12.8629306,32.6946518 L0.135278613,25.332498 C-0.56726465,24.9257096 -1,24.1743377 -1,23.3623473 L-1,8.63781792 C-1,7.82533466 -0.567409549,7.07453951 0.13562416,6.66746721 L12.8636403,-0.695557449 C13.5667275,-1.10148085 14.4332725,-1.10148085 15.1371226,-0.695116592 L27.863434,6.66730391 C28.5670118,7.07401009 29,7.82493224 29,8.63781792 L29,23.3623473 Z" id="Stroke-26" stroke-width="2"></path>
+            </g>
+        </g>
+        <g id="dtpr_icons-/-purpose-/-ic_white-/-connectivity" transform="translate(6.000000, 6.000000)">
+            <rect id="Container" x="0" y="0" width="24" height="24"></rect>
+            <g id="24px-(30)" stroke-width="1" fill-rule="evenodd">
+                <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                <path d="M1,9 L3,11 C7.97,6.03 16.03,6.03 21,11 L23,9 C16.93,2.93 7.08,2.93 1,9 Z M9,17 L12,20 L15,17 C13.35,15.34 10.66,15.34 9,17 Z M5,13 L7,15 C9.76,12.24 14.24,12.24 17,15 L19,13 C15.14,9.14 8.87,9.14 5,13 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
