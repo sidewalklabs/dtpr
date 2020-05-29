@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <div id="chat-client">
+      <!-- injected configured chat client -->
+    </div>
+    <script>
+      // intial configuration of the conversation
+      const chatConfig = {
+        agentId: "f92d33ee-bfa0-4c27-9a5d-852381c861c2", // this is the dialog-flow id for the specific agent which should handle the requests
+        startingIntent: "learn-about-place", // the intent that the conversation will start on - also persisted under the originalIntent
+        placeId: "recHJJkuqk0AYjHa9", // the place that the system or component is in - id corresponds to DTPR Airtable place id
+        // Note the absence of the component id from the config - it is not needed b/c we are only drilling as far down as the base place
+      };
+      // Element is injected dynamically to allow chatConfig to be written into the chat client on start up
+      // We make use of the user-id string which is passed to the Dialog-Flow fulfillment code to transport
+      // a JSON formatted string of configuration information
+      document.getElementById("chat-client").innerHTML = `<df-messenger
+        user-id=${JSON.stringify(chatConfig)}
+        expand=true
+        intent="WELCOME"
+        chat-title="Library Assistant"
+        agent-id=${chatConfig.agentId}
+        language-code="en">
+      </df-messenger>`;
+    </script>
+  </body>
+</html>
