@@ -661,47 +661,29 @@
         }
 
         var chainData = [];
-        // Accountability
-        $.each(page["Accountability"], function (i, id) {
-          data[id].id = id;
-          chainData.push(data[id]);
+        var tableNames = [
+          "Accountability",
+          "Purpose",
+          "Technology Type",
+          "Data Type",
+          "Data Process",
+          "Access",
+          "Storage",
+        ];
+        $.each(tableNames, function (i, tableName) {
+          $.each(page[tableName], function (i, id) {
+            data[id].id = id;
+            data[id].tableName = tableName;
+            chainData.push(data[id]);
+          });
         });
-        // Purpose
-        $.each(page["Purpose"], function (i, id) {
-          data[id].id = id;
-          chainData.push(data[id]);
-        });
-        // Technology Type
-        $.each(page["Technology Type"], function (i, id) {
-          data[id].id = id;
-          chainData.push(data[id]);
-        });
-        // Data Type
-        $.each(page["Data Type"], function (i, id) {
-          data[id].id = id;
-          chainData.push(data[id]);
-        });
-        // Data Process
-        $.each(page["Data Process"], function (i, id) {
-          data[id].id = id;
-          chainData.push(data[id]);
-        });
-        // Access
-        $.each(page["Access"], function (i, id) {
-          data[id].id = id;
-          chainData.push(data[id]);
-        });
-        // Storage
-        $.each(page["Storage"], function (i, id) {
-          data[id].id = id;
-          chainData.push(data[id]);
-        });
+
         var template = $("#hidden-template").html();
         $.each(chainData, function (i, n) {
           li = $(template);
           li.attr("id", n.id);
           li.find(".dtpr-list-main").html(n["Name"]);
-          li.find(".dtpr-list-sub").html(n["TaxonomyTable"]);
+          li.find(".dtpr-list-sub").html(n["tableName"]);
           li.find(".dtpr-chain-icon").attr(
             "src",
             "../dtpr_icons/" + n["Icon Shortname"] + ".svg"
