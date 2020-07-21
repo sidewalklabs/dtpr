@@ -1,454 +1,470 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
+  <head>
+    <!-- The icons and the taxonomy used in this prototype is licensed by the Digital Transparency in the Public Realm contributors under CC BY 4.0. The source code for the Digital Channel Prototype is licensed under Apache 2.0.” -->
 
-<head>
+    <meta charset="utf-8" />
 
-  <!-- The icons and the taxonomy used in this prototype is licensed by the Digital Transparency in the Public Realm contributors under CC BY 4.0. The source code for the Digital Channel Prototype is licensed under Apache 2.0.” -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
 
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#000000">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
+    <title>DTPR</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"
+    ></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script type="text/javascript" src="lib/kjua-0.4.0.min.js"></script>
 
-  <title>DTPR</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"> </script>
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <script type="text/javascript" src="lib/kjua-0.4.0.min.js"></script>
+    <!-- <script type="text/javascript" src="dtpr_taxonomy.js"></script> -->
 
-  <!-- <script type="text/javascript" src="dtpr_taxonomy.js"></script> -->
+    <script type="text/javascript">
+      // Get data from Airtable
+      var tableNames = [
+        "Instances",
+        "Places",
+        "Accountability",
+        "Purpose",
+        "Technology%20Type",
+        "Data%20Type",
+        "Data%20Process",
+        "Access",
+        "Storage",
+      ];
+      var databaseContent = {};
+      function getAllPaths(cb) {
+        var baseId = "appFAUWelnq9jj2uI";
+        var apiKey = "keyeoe2kUHXjNOgfP";
+        $.each(tableNames, function (i, tableName) {
+          var tablePath =
+            "https://api.airtable.com/v0/" +
+            baseId +
+            "/" +
+            tableName +
+            "?api_key=" +
+            apiKey +
+            "&view=Grid%20view";
+          databaseContent[tableName] = [];
+          $.get(tablePath, function (data) {
+            $.each(data.records, function (i, record) {
+              record.fields.id = record.id;
+              allRecords[record.id] = record.fields;
+              databaseContent[tableName].push(record.fields);
+            });
 
-  <script type="text/javascript">
-  // Get data from Airtable
-    var tableNames = [
-      "Instances",
-      "Places",
-      "Accountability",
-      "Purpose",
-      "Technology%20Type",
-      "Data%20Type",
-      "Data%20Process",
-      "Access",
-      "Storage"
-    ];
-    var databaseContent = {};
-    function getAllPaths(cb) {
-      var baseId = "appFAUWelnq9jj2uI";
-      var apiKey = "keyeoe2kUHXjNOgfP";
-      $.each(tableNames, function(i, tableName) {
-        var tablePath =
-          "https://api.airtable.com/v0/" +
-          baseId +
-          "/" +
-          tableName +
-          "?api_key=" +
-          apiKey +
-          "&view=Grid%20view";
-        databaseContent[tableName] = [];
-        $.get(tablePath, function(data) {
-          $.each(data.records, function(i, record) {
-            record.fields.id = record.id;
-            allRecords[record.id] = record.fields;
-            databaseContent[tableName].push(record.fields);
+            recordQueryCount++;
+            if (recordQueryCount >= tableNames.length) {
+              cb();
+            }
           });
+        });
+      }
 
-          recordQueryCount++;
-          if (recordQueryCount >= tableNames.length) {
-            cb();
-          }
+      var allRecords = {};
+      var recordQueryCount = 0;
+      var pageType = "home";
+      $(function () {
+        getAllPaths(function () {
+          initApp();
         });
       });
-    }
-
-    var allRecords = {};
-    var recordQueryCount = 0;
-    var pageType = "home";
-    $(function(){
-      getAllPaths(function() {
-        initApp();
-      });
-    })
-  </script>
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138761537-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-138761537-1');
     </script>
 
-  
-  <style>
-    html>body{
-      font-family: 'Roboto','Helvetica','Arial',sans-serif!important;
-      max-width: 480px;
-      margin: 0 auto!important;
-      box-shadow: 0 0 40px rgba(0,0,0,.2);
-    }
-    .mdl-layout__header-row{
-      padding: 0 16px;
-    }
-    .dtpr-header-icon{
-      text-align: center;
-      display: none;
-    }
-    .dtpr-header-icon .icon{
-      margin: 24px auto 0 auto;
-      display: block;
-    }
-    .dtpr-header-icon .line{
-      margin:6px auto 0 auto;
-      display: block;
-    }
-    h2.intro{
-      -webkit-text-fill-color: #000000;
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 0px;
-      line-height: 1.2;
-      text-align: center;
-      margin: 24px 24px; 
-    }
-    #intro-subtitle{
-      margin: -12px auto -16px auto;
-      display: flex;
-    }
-    #intro-subtitle p{
-      /* border:4px solid rgba(0,0,0,1); */
-      background: #000;
-      color:#FFF;
-      display: inline-block;
-      margin:auto;
-      height: 28px;
-      line-height: 28px;
-      padding: 0 8px;
-      border-radius: 5px;
-    }
-    .dtpr-button{
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 16px;
-      overflow: visible;
-      background:white;
-      height: 32px;
-      line-height: 32px;
-      -webkit-text-fill-color: #000000;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0px;
-      line-height: 1.7;
-      text-transform: none;
-      opacity: 0.800000011920929;
-      text-align: left;
-    }
-    .dtpr-tabs-bar{
-      height: 140px;
-      padding: 0 16px;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    .dtpr-tab{
-      -webkit-text-fill-color: rgba(0, 0, 0, 0.87);
-      font-size: 12px;
-      line-height: 16px;
-      font-weight: 500;
-      letter-spacing: 0px;
-      text-transform: none;
-      text-align: center;
-      height: 88px;
-      float: left;
-      width: 29%;
-      margin: 20px 2% 20px 2%;
-    }
-    .dtpr-tab-badge{
-      height: 48px;
-      margin: 0 auto 8px auto;
-      line-height: 48px;
-      background: url("../dtpr_icons/container/circle.svg") no-repeat center center;
-      background-size: 48px 48px;
-    }
-    #badge_accountability .dtpr-tab-badge{
-      background-size: contain;
-    }
-    .dtpr-context-container{
-      padding: 16px;
-    }
-    .dtpr-context-image{
-      background:#eee;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 8px;
-      height:120px;
-      text-align: center;
-      background-size:cover;
-    }
-    .context-image-icon{
-      background:rgba(0,0,0,.7);
-      width: 36px;
-      height: 36px;
-      margin: 42px auto 0;
-      border-radius: 20px;
-      color:white;
-      line-height:48px;
-    }
-    .dtpr-button .material-icons{
-      width: 20px;
-      height: 20px;
-      font-size:20px;
-      margin-top:-2px;
-      margin-left:-8px;
-      margin-right: 2px;
-    }
-    .dtpr-button.hex-button{
-      padding: 0 8px;
-      line-height: 16px;
-      text-align: center;
-      flex-shrink: 0;
-      flex-grow: 0;
-      flex-basis: 48px;
-    }
-    .dtpr-description{
-      margin: 16px;
-    }
-    .dtpr-chain-container{
-      background: url("../dtpr_icons/chain/middle.svg") no-repeat;
-      width:36px;
-      height: 56px;
-      margin-right: 20px;
-      display: inline-block;
-    }
-    
-    .dtpr-chain-icon{
-      margin:10px 20px 10px 0;
-    }
-    .mdl-list__item{
-      padding:0 16px;
-      white-space: nowrap; 
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size:14px;
-      line-height: 56px;
-      background-image: url("../dtpr_icons/chain/middle.svg");
-      background-repeat: no-repeat;
-      background-position: 16px 0;
-      height: 56px;
-    }
-    .mdl-list__item-primary-content{
-      white-space: nowrap; 
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .dtpr-list-main{
-      white-space: nowrap; 
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .mdl-list__item:first-child{
-      background-image: url("../dtpr_icons/chain/top.svg");
-    }
-    .mdl-list__item:last-child, .mdl-list__item:nth-last-child(2){
-      background-image: url("../dtpr_icons/chain/bottom.svg");
-    }
-    .mdl-list__item.no-chain{
-      background:none;
-    }
-    .dtpr-list-sub{
-      float: right;
-      text-align:right;
-      white-space: nowrap; 
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 120px;
-      font-size:14px;
-      color:rgba(0,0,0,.5);
-    }
-    .dtpr-list-description {
-      display: none;
-    }
-    .dtpr-list-description p{
-      margin: 0 16px 0 33px;
-      border-left: 2px solid #000;
-      padding: 0 0 24px 37px;
-    }
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-138761537-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    .dtpr-feedback-container{
-      padding: 16px;
-    }
-    .dtpr-feedback-box{
-      background:#eee;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 8px;
-      text-align: center;
-    }
-    .dtpr-feedback-button{
-      padding: 12px 24px;
+      gtag("config", "UA-138761537-1");
+    </script>
 
-    }
-    .feedback-negative{
-      background-color: #F5CCDD;
-      border: 0.5px solid rgba(0, 0, 0, 0.1);
-      border-radius: 24px;
-      overflow: visible;
-      float: left;
-      margin-left: 20px;
-    }
-    .feedback-meh{
-      background-color: #FDEDD3;
-      border: 0.5px solid rgba(0, 0, 0, 0.1);
-      border-radius: 24px;
-      overflow: visible;
-    }
-    .feedback-positive{
-      background-color: #E5F6D2;
-      border: 0.5px solid rgba(0, 0, 0, 0.1);
-      border-radius: 24px;
-      overflow: visible;
-      float: right;
-      margin-right:20px;
-    }
-    .dtpr-send-button-container{
-      display: flex;
-    }
-    .dtpr-send-button{
-      background-color: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 28px;
-      height: 48px;
-      line-height: 44px;
-      flex-grow: 1;
-      text-align: left;
-      font-size: 14px;
-      color:rgba(0,0,0,.7);
-      text-indent: 16px;
-      margin: 20px 20px;
-    }
-    .dtpr-send-button .material-icons{
-      color: rgba(0,0,0,.5);
-      float: right;
-      display: block;
-      line-height: 44px;
-      margin-right: 8px;
-    }
-    
-    #aframe-header{
-      position: fixed;
-      top:0;
-      height: 56px;
-      z-index: 100;
-    }
-    #aframe-viewer, #aframe-header{
-      display: none;
-    }
-    .mdl-layout__header-row{
-      box-shadow: 0 0 4px rgba(0, 0, 0, .15);
-    }
-    #scrim{
-      z-index: 1000;
-      background:#FFF;
-      position: fixed;
-      width: 100%;
-      height:100%;
-      top:0;
-      left:0;
-    }
-    #signs-container{
-      z-index: 2000;
-      background:#DAEFE2;
-      position: fixed;
-      width: 100%;
-      height:100%;
-      top:0;
-      left:0;
-      display: none;
-    }
-    #signs{
-      width: 100%;
-      height:100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .sign-hex{
-      width:144px;
-      height:144px;
-      margin:0 -8px;
-    }
-    #sign-purpose{
-      margin:0 auto;
-      width: 128px;
-      
-    }
-    .sign-logo-qrcode{
-      margin:-30px auto;
-      width: 260px;
-    }
-    #sign-logo{
-      display: inline-block;
-    }
-    #signs .icon-box{
-      width:112px;
-      height:144px;
-      margin: 0 8px;
-      position: absolute;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center 4px;
-    }
-    #sign-logo .icon-box{
-      width:96px;
-      background-position: center 28px;
-      margin: 0 16px;
-    }
-    #signs .icon-box .icon-label{
-      font-size: 10px;
-      font-weight: 500;
-      line-height: 14px;
-      margin: 92px 12px 0 12px;
-      text-align: center
-    }
-    #sign-purpose .icon-label{
-      color:white;
-    }
-    #sign-qrcode{
-      display: inline-block;
-    }
-    #sign-qrcode .icon-box .icon-label{
-      margin:0;
-      display:block;
-    }
-    .sign-qrcode-img{
-      width:80px;
-      height:80px;
-      display:block;
-      margin: 32px 16px;
-    }
-    #sign-privacy{
-      margin:0 auto;
-      width: 128px;
-    }
-    .sign-close-box{
-      position: absolute;
-      top: 16px;
-      text-align: center;
-      display: flex;
-      justify-content:center;
-      width:100%;
-    }
-    .sign-close-box button{
-      
-    }
-    #dtpr-footer-text p{
-      padding: 0 16px;
-      text-align: center;
-      color:#777;
-    }
+    <style>
+      html > body {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+        max-width: 480px;
+        margin: 0 auto !important;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+      }
+      .mdl-layout__header-row {
+        padding: 0 16px;
+      }
+      .dtpr-header-icon {
+        text-align: center;
+        display: none;
+      }
+      .dtpr-header-icon .icon {
+        margin: 24px auto 0 auto;
+        display: block;
+      }
+      .dtpr-header-icon .line {
+        margin: 6px auto 0 auto;
+        display: block;
+      }
+      h2.intro {
+        -webkit-text-fill-color: #000000;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: 1.2;
+        text-align: center;
+        margin: 24px 24px;
+      }
+      #intro-subtitle {
+        margin: -12px auto -16px auto;
+        display: flex;
+      }
+      #intro-subtitle p {
+        /* border:4px solid rgba(0,0,0,1); */
+        background: #000;
+        color: #fff;
+        display: inline-block;
+        margin: auto;
+        height: 28px;
+        line-height: 28px;
+        padding: 0 8px;
+        border-radius: 5px;
+      }
+      .dtpr-button {
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 16px;
+        overflow: visible;
+        background: white;
+        height: 32px;
+        line-height: 32px;
+        -webkit-text-fill-color: #000000;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: 1.7;
+        text-transform: none;
+        opacity: 0.800000011920929;
+        text-align: left;
+      }
+      .dtpr-tabs-bar {
+        height: 140px;
+        padding: 0 16px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .dtpr-tab {
+        -webkit-text-fill-color: rgba(0, 0, 0, 0.87);
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        text-transform: none;
+        text-align: center;
+        height: 88px;
+        float: left;
+        width: 29%;
+        margin: 20px 2% 20px 2%;
+      }
+      .dtpr-tab-badge {
+        height: 48px;
+        margin: 0 auto 8px auto;
+        line-height: 48px;
+        background: url("../dtpr_icons/container/circle.svg") no-repeat center
+          center;
+        background-size: 48px 48px;
+      }
+      #badge_accountability .dtpr-tab-badge {
+        background-size: contain;
+      }
+      .dtpr-context-container {
+        padding: 16px;
+      }
+      .dtpr-context-image {
+        background: #eee;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        height: 120px;
+        text-align: center;
+        background-size: cover;
+      }
+      .context-image-icon {
+        background: rgba(0, 0, 0, 0.7);
+        width: 36px;
+        height: 36px;
+        margin: 42px auto 0;
+        border-radius: 20px;
+        color: white;
+        line-height: 48px;
+      }
+      .dtpr-button .material-icons {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        margin-top: -2px;
+        margin-left: -8px;
+        margin-right: 2px;
+      }
+      .dtpr-button.hex-button {
+        padding: 0 8px;
+        line-height: 16px;
+        text-align: center;
+        flex-shrink: 0;
+        flex-grow: 0;
+        flex-basis: 48px;
+      }
+      .dtpr-description {
+        margin: 16px;
+      }
+      .dtpr-chain-container {
+        background: url("../dtpr_icons/chain/middle.svg") no-repeat;
+        width: 36px;
+        height: 56px;
+        margin-right: 20px;
+        display: inline-block;
+      }
 
+      .dtpr-chain-icon {
+        margin: 10px 20px 10px 0;
+      }
+      .mdl-list__item {
+        padding: 0 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        line-height: 56px;
+        background-image: url("../dtpr_icons/chain/middle.svg");
+        background-repeat: no-repeat;
+        background-position: 16px 0;
+        height: 56px;
+      }
+      .mdl-list__item-primary-content {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .dtpr-list-main {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .mdl-list__item:first-child {
+        background-image: url("../dtpr_icons/chain/top.svg");
+      }
+      .mdl-list__item:last-child,
+      .mdl-list__item:nth-last-child(2) {
+        background-image: url("../dtpr_icons/chain/bottom.svg");
+      }
+      .mdl-list__item.no-chain {
+        background: none;
+      }
+      .dtpr-list-sub {
+        float: right;
+        text-align: right;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .dtpr-list-description {
+        display: none;
+      }
+      .dtpr-list-description p {
+        margin: 0 16px 0 33px;
+        border-left: 2px solid #000;
+        padding: 0 0 24px 37px;
+      }
+
+      .dtpr-feedback-container {
+        padding: 16px;
+      }
+      .dtpr-feedback-box {
+        background: #eee;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        text-align: center;
+      }
+      .dtpr-feedback-button {
+        padding: 12px 24px;
+      }
+      .feedback-negative {
+        background-color: #f5ccdd;
+        border: 0.5px solid rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        overflow: visible;
+        float: left;
+        margin-left: 20px;
+      }
+      .feedback-meh {
+        background-color: #fdedd3;
+        border: 0.5px solid rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        overflow: visible;
+      }
+      .feedback-positive {
+        background-color: #e5f6d2;
+        border: 0.5px solid rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        overflow: visible;
+        float: right;
+        margin-right: 20px;
+      }
+      .dtpr-send-button-container {
+        display: flex;
+      }
+      .dtpr-send-button {
+        background-color: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 28px;
+        height: 48px;
+        line-height: 44px;
+        flex-grow: 1;
+        text-align: left;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.7);
+        text-indent: 16px;
+        margin: 20px 20px;
+      }
+      .dtpr-send-button .material-icons {
+        color: rgba(0, 0, 0, 0.5);
+        float: right;
+        display: block;
+        line-height: 44px;
+        margin-right: 8px;
+      }
+
+      #aframe-header {
+        position: fixed;
+        top: 0;
+        height: 56px;
+        z-index: 100;
+      }
+      #aframe-viewer,
+      #aframe-header {
+        display: none;
+      }
+      .mdl-layout__header-row {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+      }
+      #scrim {
+        z-index: 1000;
+        background: #fff;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+      #signs-container {
+        z-index: 2000;
+        background: #daefe2;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #signs {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .sign-hex {
+        width: 144px;
+        height: 144px;
+        margin: 0 -8px;
+      }
+      #sign-purpose {
+        margin: 0 auto;
+        width: 128px;
+      }
+      .sign-logo-qrcode {
+        margin: -30px auto;
+        width: 260px;
+      }
+      #sign-logo {
+        display: inline-block;
+      }
+      #signs .icon-box {
+        width: 112px;
+        height: 144px;
+        margin: 0 8px;
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center 4px;
+      }
+      #sign-logo .icon-box {
+        width: 96px;
+        background-position: center 28px;
+        margin: 0 16px;
+      }
+      #signs .icon-box .icon-label {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 14px;
+        margin: 92px 12px 0 12px;
+        text-align: center;
+      }
+      #sign-purpose .icon-label {
+        color: white;
+      }
+      #sign-qrcode {
+        display: inline-block;
+      }
+      #sign-qrcode .icon-box .icon-label {
+        margin: 0;
+        display: block;
+      }
+      .sign-qrcode-img {
+        width: 80px;
+        height: 80px;
+        display: block;
+        margin: 32px 16px;
+      }
+      #sign-privacy {
+        margin: 0 auto;
+        width: 128px;
+      }
+      .sign-close-box {
+        position: absolute;
+        top: 16px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      .sign-close-box button {
+      }
+      #dtpr-footer-text p {
+        padding: 0 16px;
+        text-align: center;
+        color: #777;
+      }
     </style>
 
     <script id="hidden-template" type="text/x-custom-template">
@@ -462,47 +478,52 @@
     </script>
     <script type="text/javascript">
       var markdownConverter = new showdown.Converter();
- 
-      var recordQueryCount = 0
-      var pageType = "home"
 
-      function fadeToPage(){
-        $("#scrim").fadeOut()
+      var recordQueryCount = 0;
+      var pageType = "home";
+
+      function fadeToPage() {
+        $("#scrim").fadeOut();
       }
 
-      function buildHomePage(){
+      function buildHomePage() {
         $(".entity-layout, .dtpr-feedback-container, header").hide();
-        var template = $('#hidden-template').html();
-        $.each(databaseContent.Instances, function(i,n){
-          var purposeObject = n["Purpose"]
-          if(purposeObject){
-            var iconName = allRecords[purposeObject[0]]["Icon Shortname"]
+        var template = $("#hidden-template").html();
+        $.each(databaseContent.Instances, function (i, n) {
+          var purposeObject = n["Purpose"];
+          if (purposeObject) {
+            var iconName = allRecords[purposeObject[0]]["Icon Shortname"];
             li = $(template);
-            li.find(".dtpr-chain-icon").attr("src","../dtpr_icons/" + iconName + ".svg")
-            li.attr("id",n.id);
+            li.find(".dtpr-chain-icon").attr(
+              "src",
+              "../dtpr_icons/" + iconName + ".svg"
+            );
+            li.attr("id", n.id);
             li.addClass("no-chain");
             li.find(".dtpr-list-main").html(n["Name"]);
             li.find(".dtpr-list-sub").hide();
-            $('.dtpr-chain-list').append(li);
-            li.click(function(el){
-              window.location = "?technology="+this.id
-            })
+            $(".dtpr-chain-list").append(li);
+            li.click(function (el) {
+              window.location = "?technology=" + this.id;
+            });
           }
-          
         });
       }
 
-      function buildTaxonomyPage(id, data){
+      function buildTaxonomyPage(id, data) {
         page = data[id];
 
         window.document.title = "DTPR – " + page["Headline"];
         $(".dtpr-header-icon").show();
-        iconSrc = page["Icon Shortname"]
-        $(".dtpr-header-icon .icon").attr("src","../dtpr_icons/"+iconSrc+".svg");
+        iconSrc = page["Icon Shortname"];
+        $(".dtpr-header-icon .icon").attr(
+          "src",
+          "../dtpr_icons/" + iconSrc + ".svg"
+        );
         $(".intro").text(page["Headline"]);
         // $("#intro-subtitle p").text(page["TaxonomyTable"] + ": " + page["Name"]);
         $("#intro-subtitle p").text(page["Name"]);
-        
+
         var html = markdownConverter.makeHtml(page["Description"]);
         $(".dtpr-description").html(html);
 
@@ -511,227 +532,274 @@
         $("ul.dtpr-chain-list").hide();
       }
       var page;
-      function getField(knownObject,possibleNulls){
+      function getField(knownObject, possibleNulls) {
         var foundObject;
-        if(knownObject != undefined){
-          $.each(possibleNulls,function(i,n){
+        if (knownObject != undefined) {
+          $.each(possibleNulls, function (i, n) {
             foundObject = knownObject[n];
-            if(foundObject == undefined){
+            if (foundObject == undefined) {
               foundObject = "";
             }
-          })
+          });
           return foundObject;
         }
         return "";
       }
-      function buildTechnologyPage(id, data){
+      function buildTechnologyPage(id, data) {
         page = data[id];
-        page.id = id
+        page.id = id;
 
         window.document.title = "DTPR – " + page["Headline"];
         $(".intro").text(page["Headline"]);
-        
+
         var html = markdownConverter.makeHtml(page["Description"]);
         $(".dtpr-description").html(html);
 
-        purposeBadge = data[page["Purpose"][0]]
-        purposeImage = "../dtpr_icons/"+purposeBadge["Icon Shortname"]+".svg";
+        purposeBadge = data[page["Purpose"][0]];
+        purposeImage =
+          "../dtpr_icons/" + purposeBadge["Icon Shortname"] + ".svg";
         // purposeBlackImage = "../dtpr_icons/"+purposeBadge["Icon Shortname"].replace(/\//,"/black/")+".svg";
         privacyBadge = data[page["Technology Type"][0]];
-        privacyImage = "../dtpr_icons/"+privacyBadge["Icon Shortname"]+".svg";
-        accountabilityBadge = data[page["Accountability"][0]]
-        accountabilityImage = getField(accountabilityBadge,["Logo",0,"url"]);
+        privacyImage =
+          "../dtpr_icons/" + privacyBadge["Icon Shortname"] + ".svg";
+        accountabilityBadge = data[page["Accountability"][0]];
+        accountabilityImage = accountabilityBadge["Logo"][0]["url"];
         // accountabilityImage = (accountabilityBadge["Logo"] != undefined) ? accountabilityBadge["Logo"][0]["url"] : "";
-        privacyTransparentImage = "../dtpr_icons/"+privacyBadge["Icon Shortname"]+".svg";
+        privacyTransparentImage =
+          "../dtpr_icons/" + privacyBadge["Icon Shortname"] + ".svg";
 
-        $("#sign-purpose .icon-box").css("background-image", "url('"+purposeImage+"')");
+        $("#sign-purpose .icon-box").css(
+          "background-image",
+          "url('" + purposeImage + "')"
+        );
         $("#sign-purpose .icon-label").text(purposeBadge["Name"]);
-        $("#sign-privacy .icon-box").css("background-image", "url('"+privacyTransparentImage+"')");
-        
+        $("#sign-privacy .icon-box").css(
+          "background-image",
+          "url('" + privacyTransparentImage + "')"
+        );
+
         $("#sign-privacy .icon-label").text(privacyBadge["Name"]);
-        $("#sign-logo .icon-box").css("background-image", "url('"+accountabilityImage+"')");
+        $("#sign-logo .icon-box").css(
+          "background-image",
+          "url('" + accountabilityImage + "')"
+        );
         $("#sign-logo .icon-label").text(accountabilityBadge["Name"]);
-        if(privacyBadge["Icon Shortname"].search(/yellow|blue/) == -1){
+        if (privacyBadge["Icon Shortname"].search(/yellow|blue/) == -1) {
           $("#sign-privacy").hide();
-        }else if(privacyBadge["Icon Shortname"].search(/yellow/) != -1){
-          $("#sign-privacy .sign-hex").attr("src", "../dtpr_icons/container/yellow/hexagon.svg");
-        }else if(privacyBadge["Icon Shortname"].search(/blue/) != -1){
-          $("#sign-privacy .sign-hex").attr("src", "../dtpr_icons/container/blue/hexagon.svg");
+        } else if (privacyBadge["Icon Shortname"].search(/yellow/) != -1) {
+          $("#sign-privacy .sign-hex").attr(
+            "src",
+            "../dtpr_icons/container/yellow/hexagon.svg"
+          );
+        } else if (privacyBadge["Icon Shortname"].search(/blue/) != -1) {
+          $("#sign-privacy .sign-hex").attr(
+            "src",
+            "../dtpr_icons/container/blue/hexagon.svg"
+          );
         }
-        
 
-
-        $("#badge_purpose .dtpr-tab-badge").css("background-image", "url('"+purposeImage+"')");
-        $("#badge_privacy .dtpr-tab-badge").css("background-image", "url('"+privacyImage+"')");
-        $("#badge_accountability .dtpr-tab-badge").css("background-image", "url('"+accountabilityImage+"')");
+        $("#badge_purpose .dtpr-tab-badge").css(
+          "background-image",
+          "url('" + purposeImage + "')"
+        );
+        $("#badge_privacy .dtpr-tab-badge").css(
+          "background-image",
+          "url('" + privacyImage + "')"
+        );
+        $("#badge_accountability .dtpr-tab-badge").css(
+          "background-image",
+          "url('" + accountabilityImage + "')"
+        );
 
         $("#badge_purpose .dtpr-tab-text").text(purposeBadge["Name"]);
         $("#badge_privacy .dtpr-tab-text").text(privacyBadge["Name"]);
-        $("#badge_accountability .dtpr-tab-text").text(accountabilityBadge["Name"]);
+        $("#badge_accountability .dtpr-tab-text").text(
+          accountabilityBadge["Name"]
+        );
 
         $("#badge_purpose").attr("data-id", purposeBadge.id);
         $("#badge_privacy").attr("data-id", privacyBadge.id);
         $("#badge_accountability").attr("data-id", accountabilityBadge.id);
 
-        var dtpr_baseurl = "https://dtpr.sidewalklabs.com/dtpr_prototype/?technology="
-        var params = new URLSearchParams(window.location.search)
+        var dtpr_baseurl =
+          "https://dtpr.sidewalklabs.com/dtpr_prototype/?technology=";
+        var params = new URLSearchParams(window.location.search);
         var techologyIndex = params.get("technology");
-        var el = kjua({text: dtpr_baseurl + techologyIndex});
-        $("#sign-qrcode .sign-qrcode-img").attr("src",$(el).attr("src"));
+        var el = kjua({ text: dtpr_baseurl + techologyIndex });
+        $("#sign-qrcode .sign-qrcode-img").attr("src", $(el).attr("src"));
         // $("#sign-qrcode .icon-label").text(dtpr_baseurl);
-        
 
-        $("#badge_purpose, #badge_privacy, #badge_accountability").click(function(el){
-          // window.location = "?taxonomy="+$(this).attr("data-id")+"&technologyBack="+page.id
-          rowEl = $("#" + $(this).attr("data-id"))
-          $([document.documentElement, document.body]).animate({
-              scrollTop: rowEl.offset().top
-          }, 500);
-          rowEl.click();
-        });
+        $("#badge_purpose, #badge_privacy, #badge_accountability").click(
+          function (el) {
+            // window.location = "?taxonomy="+$(this).attr("data-id")+"&technologyBack="+page.id
+            rowEl = $("#" + $(this).attr("data-id"));
+            $([document.documentElement, document.body]).animate(
+              {
+                scrollTop: rowEl.offset().top,
+              },
+              500
+            );
+            rowEl.click();
+          }
+        );
 
         // $("#aframe-viewer a-sky").src = page["Pano360"][0].url
-        if(panoUrl = page["Pano360"]){
-          panoUrl = page["Pano360"][0].url
-          $(".dtpr-context-image").css("background-image","url('"+panoUrl+"')");
-          var sceneEl = document.querySelector('#panoSky');
-          sceneEl.setAttribute('material',"src: "+panoUrl+"; side: back; shader: flat"); 
+        if ((panoUrl = page["Pano360"])) {
+          panoUrl = page["Pano360"][0].url;
+          $(".dtpr-context-image").css(
+            "background-image",
+            "url('" + panoUrl + "')"
+          );
+          var sceneEl = document.querySelector("#panoSky");
+          sceneEl.setAttribute(
+            "material",
+            "src: " + panoUrl + "; side: back; shader: flat"
+          );
           $(".dtpr-context-container").show();
-        }
-        else{
+        } else {
           $(".dtpr-context-container").hide();
         }
-        
+
         var chainData = [];
         // Accountability
-        $.each(page["Accountability"], function(i,id){
+        $.each(page["Accountability"], function (i, id) {
           data[id].id = id;
           chainData.push(data[id]);
         });
         // Purpose
-        $.each(page["Purpose"], function(i,id){
+        $.each(page["Purpose"], function (i, id) {
           data[id].id = id;
           chainData.push(data[id]);
         });
         // Technology Type
-        $.each(page["Technology Type"], function(i,id){
+        $.each(page["Technology Type"], function (i, id) {
           data[id].id = id;
           chainData.push(data[id]);
         });
         // Data Type
-        $.each(page["Data Type"], function(i,id){
+        $.each(page["Data Type"], function (i, id) {
           data[id].id = id;
           chainData.push(data[id]);
         });
         // Data Process
-        $.each(page["Data Process"], function(i,id){
+        $.each(page["Data Process"], function (i, id) {
           data[id].id = id;
           chainData.push(data[id]);
         });
         // Access
-        $.each(page["Access"], function(i,id){
+        $.each(page["Access"], function (i, id) {
           data[id].id = id;
           chainData.push(data[id]);
         });
         // Storage
-        $.each(page["Storage"], function(i,id){
+        $.each(page["Storage"], function (i, id) {
           data[id].id = id;
           chainData.push(data[id]);
         });
-        var template = $('#hidden-template').html();
-        $.each(chainData, function(i,n){
+        var template = $("#hidden-template").html();
+        $.each(chainData, function (i, n) {
           li = $(template);
-          li.attr("id",n.id);
+          li.attr("id", n.id);
           li.find(".dtpr-list-main").html(n["Name"]);
           li.find(".dtpr-list-sub").html(n["TaxonomyTable"]);
-          li.find(".dtpr-chain-icon").attr("src","../dtpr_icons/"+n["Icon Shortname"]+".svg");
-          
-          var desc = $("<li class=\"dtpr-list-description\"><p></p></li>");
+          li.find(".dtpr-chain-icon").attr(
+            "src",
+            "../dtpr_icons/" + n["Icon Shortname"] + ".svg"
+          );
+
+          var desc = $('<li class="dtpr-list-description"><p></p></li>');
           var html = markdownConverter.makeHtml(n["Description"]);
           desc.html(html);
-          $('.dtpr-chain-list').append(li);
-          $('.dtpr-chain-list').append(desc);
+          $(".dtpr-chain-list").append(li);
+          $(".dtpr-chain-list").append(desc);
 
-          li.click(function(el){
+          li.click(function (el) {
             // window.location = "?taxonomy="+this.id+"&technologyBack="+page.id
-            
-            if($(this).next().css("display") == "none"){
-              $(this).next().slideDown()
-            }else{
-              $(this).next().slideUp()
+
+            if ($(this).next().css("display") == "none") {
+              $(this).next().slideDown();
+            } else {
+              $(this).next().slideUp();
             }
-            
-          })
-        })
+          });
+        });
       }
 
-      function initApp(){
-
-        var params = new URLSearchParams(window.location.search)
+      function initApp() {
+        var params = new URLSearchParams(window.location.search);
         var techologyIndex = params.get("technology");
         var taxonomyIndex = params.get("taxonomy");
         var technologyBackId = params.get("technologyBack");
         var taxonomyBackId = params.get("taxonomyBack");
-        if(technologyBackId != null){
-          $("#button-back").show()
-          $("#button-back").click(function(){
-            window.location = "?technology="+technologyBackId
-          })
-        } else{
-          $("#button-back").show()
-          $("#button-back").click(function(){
-            window.location = "?"
-          })
+        if (technologyBackId != null) {
+          $("#button-back").show();
+          $("#button-back").click(function () {
+            window.location = "?technology=" + technologyBackId;
+          });
+        } else {
+          $("#button-back").show();
+          $("#button-back").click(function () {
+            window.location = "?";
+          });
         }
 
-        if(techologyIndex != null){
-          pageType = "technology"
-          buildTechnologyPage(techologyIndex,allRecords);
-        }else if(taxonomyIndex != null){
-          pageType = "taxonomy"
-          buildTaxonomyPage(taxonomyIndex,allRecords);
-        }else{
-          pageType = "home"
+        if (techologyIndex != null) {
+          pageType = "technology";
+          buildTechnologyPage(techologyIndex, allRecords);
+        } else if (taxonomyIndex != null) {
+          pageType = "taxonomy";
+          buildTaxonomyPage(taxonomyIndex, allRecords);
+        } else {
+          pageType = "home";
           buildHomePage();
         }
-        
 
-        $('.dtpr-context-image').click(function(){
-          $('#aframe-viewer').show();
-          $('#aframe-header').show();
-        })
-        $('#button-exit-vr').click(function(){
-          $('#aframe-viewer').hide();
-          $('#aframe-header').hide();
+        $(".dtpr-context-image").click(function () {
+          $("#aframe-viewer").show();
+          $("#aframe-header").show();
         });
-        $('.feedback-negative').click(function(){
+        $("#button-exit-vr").click(function () {
+          $("#aframe-viewer").hide();
+          $("#aframe-header").hide();
+        });
+        $(".feedback-negative").click(function () {
           mailtoFeedback("critical");
-        })
-        $('.feedback-meh').click(function(){
-          mailtoFeedback("neutral");
-        })
-        $('.feedback-positive').click(function(){
-          mailtoFeedback("positive");
-        })
-        $('.dtpr-send-button').click(function(){
-          mailtoFeedback("general");
-        })
-
-        $(".hex-button").click(function(){
-          $("#signs-container").fadeIn()
         });
-        $(".sign-close-box").click(function(){
-          $("#signs-container").fadeOut()
+        $(".feedback-meh").click(function () {
+          mailtoFeedback("neutral");
+        });
+        $(".feedback-positive").click(function () {
+          mailtoFeedback("positive");
+        });
+        $(".dtpr-send-button").click(function () {
+          mailtoFeedback("general");
+        });
+
+        $(".hex-button").click(function () {
+          $("#signs-container").fadeIn();
+        });
+        $(".sign-close-box").click(function () {
+          $("#signs-container").fadeOut();
         });
 
         fadeToPage();
-        
       }
-      function mailtoFeedback(subject){
-        var FeedbackSubject = "Some "+subject+" feedback for you about "+ window.document.title;
-        var FeedbackBody = "Hello, \nI'd like to share my thoughts on "+window.document.title + "...";
-        mailUrl = "mailto:dtpr-hello@sidewalklabs.com?subject=" + FeedbackSubject + "&body="+FeedbackBody
-        window.location = mailUrl
+      function mailtoFeedback(subject) {
+        var FeedbackSubject =
+          "Some " +
+          subject +
+          " feedback for you about " +
+          window.document.title;
+        var FeedbackBody =
+          "Hello, \nI'd like to share my thoughts on " +
+          window.document.title +
+          "...";
+        mailUrl =
+          "mailto:dtpr-hello@sidewalklabs.com?subject=" +
+          FeedbackSubject +
+          "&body=" +
+          FeedbackBody;
+        window.location = mailUrl;
       }
       // AFRAME.registerComponent('code-that-does-this', {
       //   init: function () {
@@ -740,49 +808,78 @@
       //   }
       // });
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="signs-container">
       <div id="signs">
-        <div class="sign-close-box"><button class="dtpr-button mdl-button mdl-js-button"><i class="material-icons">close</i> close</button></div>
+        <div class="sign-close-box">
+          <button class="dtpr-button mdl-button mdl-js-button">
+            <i class="material-icons">close</i> close
+          </button>
+        </div>
         <div id="sign-purpose">
           <div class="icon-box"><div class="icon-label">Test Label</div></div>
-          <img class="sign-hex" src="../dtpr_icons/container/black/hexagon.svg" />
+          <img
+            class="sign-hex"
+            src="../dtpr_icons/container/black/hexagon.svg"
+          />
         </div>
         <div class="sign-logo-qrcode">
           <div id="sign-logo">
             <div class="icon-box"><div class="icon-label">Test Label</div></div>
-            <img class="sign-hex" src="../dtpr_icons/container/white/hexagon.svg" />
+            <img
+              class="sign-hex"
+              src="../dtpr_icons/container/white/hexagon.svg"
+            />
           </div>
           <div id="sign-qrcode">
-            <div class="icon-box"><div class="icon-label"><img class="sign-qrcode-img" /></div></div>
-            <img class="sign-hex" src="../dtpr_icons/container/white/hexagon.svg" />
+            <div class="icon-box">
+              <div class="icon-label"><img class="sign-qrcode-img" /></div>
+            </div>
+            <img
+              class="sign-hex"
+              src="../dtpr_icons/container/white/hexagon.svg"
+            />
           </div>
         </div>
         <div id="sign-privacy">
           <div class="icon-box"><div class="icon-label">Test Label</div></div>
-          <img class="sign-hex" src="../dtpr_icons/container/yellow/hexagon.svg" />
+          <img
+            class="sign-hex"
+            src="../dtpr_icons/container/yellow/hexagon.svg"
+          />
         </div>
       </div>
     </div>
 
     <div id="scrim"></div>
-    <div id="aframe-header" class="mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+    <div
+      id="aframe-header"
+      class="mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800"
+    >
       <div class="mdl-layout__header-row">
-        <button id="button-exit-vr" class="dtpr-button mdl-button mdl-js-button">
+        <button
+          id="button-exit-vr"
+          class="dtpr-button mdl-button mdl-js-button"
+        >
           <i class="material-icons">arrow_back</i>
           <span>Exit 360 Image</span>
         </button>
       </div>
     </div>
     <a-scene id="aframe-viewer">
-      <a-entity id="panoSky" geometry="primitive: sphere; radius: 5000; segmentsWidth: 64; segmentsHeight: 32">
+      <a-entity
+        id="panoSky"
+        geometry="primitive: sphere; radius: 5000; segmentsWidth: 64; segmentsHeight: 32"
+      >
       </a-entity>
     </a-scene>
-    
+
     <div class="mdl-layout mdl-layout--fixed-header">
-      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+      <header
+        class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800"
+      >
         <div class="mdl-layout__header-row">
           <button id="button-back" class="dtpr-button mdl-button mdl-js-button">
             <i class="material-icons">arrow_back</i>
@@ -790,7 +887,12 @@
           </button>
           <div class="mdl-layout-spacer"></div>
           <button class="hex-button dtpr-button mdl-button mdl-js-button">
-              <img src="../dtpr_icons/container/black/hexagon.svg" width="16" height="16" alt="" />
+            <img
+              src="../dtpr_icons/container/black/hexagon.svg"
+              width="16"
+              height="16"
+              alt=""
+            />
           </button>
           <div class="mdl-layout-spacer"></div>
           <button class="dtpr-button mdl-button mdl-js-button">
@@ -803,73 +905,102 @@
       <main class="entity-layout">
         <div>
           <div class="dtpr-header-icon">
-              <img class="icon" src="../dtpr_icons/container/hexagon.svg" width="96" height="96" alt="" />
-              <img class="line" src="../dtpr_icons/chain/line.svg" width="36" alt="" />
-              <div id="intro-subtitle"><p></p></div>
+            <img
+              class="icon"
+              src="../dtpr_icons/container/hexagon.svg"
+              width="96"
+              height="96"
+              alt=""
+            />
+            <img
+              class="line"
+              src="../dtpr_icons/chain/line.svg"
+              width="36"
+              alt=""
+            />
+            <div id="intro-subtitle"><p></p></div>
           </div>
           <h2 class="intro"></h2>
-          
-         
+
           <div class="dtpr-tabs-bar">
-              <div class="dtpr-tab" id="badge_purpose">
-                <div class="dtpr-tab-badge">
-                </div>
-                <div class="dtpr-tab-text"></div>
-              </div>
-              <div class="dtpr-tab" id="badge_privacy">
-                <div class="dtpr-tab-badge">
+            <div class="dtpr-tab" id="badge_purpose">
+              <div class="dtpr-tab-badge"></div>
+              <div class="dtpr-tab-text"></div>
+            </div>
+            <div class="dtpr-tab" id="badge_privacy">
+              <div class="dtpr-tab-badge"></div>
+              <div class="dtpr-tab-text"></div>
+            </div>
 
-                </div>
-                <div class="dtpr-tab-text"></div>
-              </div>
-              
-              <div class="dtpr-tab" id="badge_accountability">
-                <div class="dtpr-tab-badge">
-
-                </div>
-                <div class="dtpr-tab-text"></div>
-              </div>
+            <div class="dtpr-tab" id="badge_accountability">
+              <div class="dtpr-tab-badge"></div>
+              <div class="dtpr-tab-text"></div>
+            </div>
           </div>
           <div class="dtpr-context-container">
-              <div class="dtpr-context-image">
-                <div class="context-image-icon"><i class="material-icons">360</i></div>
+            <div class="dtpr-context-image">
+              <div class="context-image-icon">
+                <i class="material-icons">360</i>
               </div>
+            </div>
           </div>
 
           <div class="dtpr-description">
             <p></p>
           </div>
-
         </div>
       </main>
 
-      <ul class="dtpr-chain-list mdl-list "></ul>
+      <ul class="dtpr-chain-list mdl-list"></ul>
 
       <div class="dtpr-feedback-container">
-          <div class="dtpr-feedback-box">
-              <h5>How do you feel about this technology?</h5>
-              <div class="dtpr-feedback-buttons">
-                <button class="dtpr-feedback-button feedback-negative">
-                    <img class="icon" src="img/feedback_sad.svg" width="24" height="24" alt="" />
-                </button>
-                <button class="dtpr-feedback-button feedback-meh">
-                    <img class="icon" src="img/feedback_meh.svg" width="24" height="24" alt="" />
-                </button>
-                <button class="dtpr-feedback-button feedback-positive">
-                    <img class="icon" src="img/feedback_happy.svg" width="24" height="24" alt="" />
-                </button>
-              </div>
-              <div class="dtpr-send-button-container">
-                <button class="dtpr-send-button">
-                    <span>Say more about why…</span>
-                    <i class="material-icons">send</i>
-                </button>
-              </div>
+        <div class="dtpr-feedback-box">
+          <h5>How do you feel about this technology?</h5>
+          <div class="dtpr-feedback-buttons">
+            <button class="dtpr-feedback-button feedback-negative">
+              <img
+                class="icon"
+                src="img/feedback_sad.svg"
+                width="24"
+                height="24"
+                alt=""
+              />
+            </button>
+            <button class="dtpr-feedback-button feedback-meh">
+              <img
+                class="icon"
+                src="img/feedback_meh.svg"
+                width="24"
+                height="24"
+                alt=""
+              />
+            </button>
+            <button class="dtpr-feedback-button feedback-positive">
+              <img
+                class="icon"
+                src="img/feedback_happy.svg"
+                width="24"
+                height="24"
+                alt=""
+              />
+            </button>
           </div>
+          <div class="dtpr-send-button-container">
+            <button class="dtpr-send-button">
+              <span>Say more about why…</span>
+              <i class="material-icons">send</i>
+            </button>
+          </div>
+        </div>
       </div>
-      <div id="dtpr-footer-text"><p>This is an open-source prototype from the Digital Transparency in the Public Realm project. <br><a href="https://dtpr.sidewalklabs.com">LEARN MORE HERE</a></p></div>
+      <div id="dtpr-footer-text">
+        <p>
+          This is an open-source prototype from the Digital Transparency in the
+          Public Realm project. <br /><a href="https://dtpr.sidewalklabs.com"
+            >LEARN MORE HERE</a
+          >
+        </p>
+      </div>
     </div>
-
-
   </body>
 </html>
