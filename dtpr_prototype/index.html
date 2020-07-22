@@ -89,19 +89,15 @@
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-138761537-1"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173285185-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-      gtag("config", "UA-138761537-1");
+      gtag('config', 'UA-173285185-1');
     </script>
+
 
     <style>
       html > body {
@@ -304,9 +300,11 @@
         border: 1px solid rgba(0, 0, 0, 0.15);
         border-radius: 8px;
         text-align: center;
+        padding-bottom: 30px;
       }
       .dtpr-feedback-button {
         padding: 12px 24px;
+;
       }
       .feedback-negative {
         background-color: #f5ccdd;
@@ -877,10 +875,12 @@
             />
           </button>
           <div class="mdl-layout-spacer"></div>
-          <button class="dtpr-button mdl-button mdl-js-button">
+          <div class="mdl-layout-spacer"></div>
+          <!-- <button class="dtpr-button mdl-button mdl-js-button">
             <i class="material-icons">play_circle_outline</i>
             <span>Listen</span>
           </button>
+        -->
         </div>
       </header>
 
@@ -968,12 +968,16 @@
             </button>
           </div>
           <div class="dtpr-send-button-container">
-            <button class="dtpr-send-button">
+          <!-- this is the feedback mail-to link
+          <button class="dtpr-send-button">
               <span>Say more about why…</span>
               <i class="material-icons">send</i>
             </button>
+          -->
           </div>
         </div>
+        <!-- boston specific input form -->
+          <div class="typeform-widget" data-url="https://form.typeform.com/to/FrHmnice" data-transparency="50" data-hide-headers=true data-hide-footer=true style="width: 100%; height: 300px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
       </div>
       <div id="dtpr-footer-text">
         <p>
