@@ -1,3 +1,6 @@
+*2020 UPDATE: Please note that the open-source project DTPR is now independent of Sidewalk Labs and being stewarded by Helpful Places and an emerging coalition of partners and collaborators. For more information on the DTPR standard, please see this [external website](http://dtpr.helpfulplaces.com/). For the most current Github repo, please see [https://github.com/helpful-places/dtpr/](https://github.com/helpful-places/dtpr/)*
+
+
 # Designing for Digital Transparency in the Public Realm
 
 [Digital Transparency in the Public Realm](https://sidewalklabs.com/dtpr/) is a project that seeks to facilitate the co-creation of prototypes that can advance digital transparency and enable agency in the world's public spaces.
